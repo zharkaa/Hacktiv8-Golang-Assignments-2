@@ -81,8 +81,7 @@ func (oh *orderHandler) DeleteOrder(ctx *gin.Context) {
 	response, err := oh.OrderService.DeleteOrder(orderId)
 
 	if err != nil {
-		ctx.AbortWithStatusJSON(err.Status(), err)
-
+		ctx.AbortWithStatusJSON(err.Status(), errs.NewNotFoundError("Order ID Not Found"))
 		return
 	}
 
