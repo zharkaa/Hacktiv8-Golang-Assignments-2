@@ -3,8 +3,8 @@ package dto
 import "time"
 
 type NewOrderRequest struct {
-	OrderedAt    time.Time        `json:"orderedAt"`
-	CustomerName string           `json:"customerName"`
+	OrderedAt    time.Time        `json:"orderedAt" example:"2023-09-22T09:11:00+07:00"`
+	CustomerName string           `json:"customerName" example:"John Doe"`
 	Items        []NewItemRequest `json:"items"`
 }
 
